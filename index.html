@@ -305,7 +305,22 @@
                 content_1: "This Virtual Reality (VR) game is set inside a residential living room and features two distinct gameplay modes focused on emergency response and survival.\n\nIn the first mode, the player must defend themselves against swarms of mosquitoes invading the room. Using an anti-mosquito spray, the player aims and sprays in real time to repel and eliminate the mosquitoes before they overwhelm the area. This mode emphasizes quick reactions, accuracy, and situational awareness.\n\nIn the second mode, the scenario shifts to a fire emergency. The player is equipped with a fire extinguisher (APAR) and must extinguish fires that spread across furniture and objects in the room. Players must use proper extinguisher techniques, manage limited resources, and prioritize threats to prevent the fire from escalating.\n\nBoth modes are designed to take full advantage of VR interaction, using natural hand movements through motion controllers to create a realistic and immersive experience.",
                 video_url: "https://www.youtube.com/embed/d5l3eXH-IrQ?controls=0", 
                 content_2: "Key Features\n- Two gameplay modes: mosquito defense and fire extinguishing\n- Realistic VR interaction using motion controllers\n- Indoor living room environment with dynamic threats\n- Progressive difficulty and resource management\n- Training-oriented gameplay with immersive simulation elements\n\nThis project demonstrates the use of VR for interactive training simulations, combining survival mechanics with realistic emergency response scenarios."
-            }
+            },
+            {
+   id: 7,
+    title: "Emotion Duel: ArenaGo",
+    image: "emotion_duel.png",
+    excerpt: "A real-time competitive multiplayer game where players duel using facial expressions through live camera interaction.",
+
+    content_1: "Emotion Duel: ArenaGo is a real-time competitive multiplayer game where two players face each other in an emotion-based battle using live camera interaction. The objective is to maintain control of your expressions while trying to provoke a reaction from your opponent.\n\nEach match is fast-paced and interactive, creating a unique social gameplay experience that blends competition, psychology, and real-time reaction.",
+
+    video_url: "",
+
+    content_2: "Technical Implementation:\n- Built with Unity Engine\n- Multiplayer networking powered by Photon Engine for real-time synchronization\n- Live video communication powered by Agora SDK\n- Real-time camera input processing and emotion interaction logic\n- Cross-platform deployment (Android & iOS)\n\nPhoton Engine ensures low-latency matchmaking, room management, and synchronized gameplay logic, while Agora handles stable real-time video streaming between players.\n\nThis project demonstrates advanced multiplayer architecture, third-party SDK integration, real-time networking, and cross-platform mobile deployment.",
+
+    playstore_url: "https://play.google.com/store/apps/details?id=com.EmotionDuel.ArenaGo",
+    appstore_url: "https://apps.apple.com/id/app/emotion-duel/id6753614362"
+}
         ];
 
         // --- 2. LOGIC TAMPILAN ---
@@ -368,11 +383,17 @@
                 }
 
                 // 4. Isi Link Playstore (OPSIONAL)
-                if (article.playstore_url) {
-                    detailLinkContainer.innerHTML = `<a href="${article.playstore_url}" target="_blank" class="playstore-button">Download on Play Store</a>`;
-                } else {
-                    detailLinkContainer.innerHTML = '';
-                }
+              let linksHTML = '';
+
+if (article.playstore_url) {
+    linksHTML += `<a href="${article.playstore_url}" target="_blank" class="playstore-button">Download on Play Store</a> `;
+}
+
+if (article.appstore_url) {
+    linksHTML += `<a href="${article.appstore_url}" target="_blank" class="playstore-button" style="background-color:#000;margin-left:10px;">Download on App Store</a>`;
+}
+
+detailLinkContainer.innerHTML = linksHTML;
 
                 // Tampilkan detail view dan scroll ke atas
                 homeView.style.display = 'none';
